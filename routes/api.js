@@ -7,12 +7,13 @@ router.get('/all', (request, response)=>{
 })
 
 router.post('/new', express.json(), (request, response)=>{
-    let title = request.body.tiltle
+    let title = request.body.title
     let message = request.body.message
 
-    reminders.newReminder({title, message})
+    reminders.newReminder(title, message)
 
     response.send('Added Reminder')
 })
 
 module.exports = router
+
